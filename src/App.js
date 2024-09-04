@@ -17,7 +17,7 @@ const App = () => {
           mode: 'no-cors',
           method: 'GET',
           headers: {
-            'Content-Type': 'application/json'
+            Accept: 'application/json'
           },
         },
       );
