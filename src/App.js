@@ -12,7 +12,7 @@ const App = () => {
 
     try {
       const response = await fetch(
-        'https://reqres.in/api/users',
+        'https://tst.moidex.ru/mirror_api/users/list',
         {
           method: 'GET',
           headers: {
@@ -52,10 +52,15 @@ const App = () => {
 
       {data.data.map(person => {
         return (
-          <div key={person.id}>
+          <div key={person._id}>
+            <h2>{person.name}</h2>
+            <h2>{person.role}</h2>
+            <h2>{person.login}</h2>
+            
             <h2>{person.email}</h2>
-            <h2>{person.first_name}</h2>
-            <h2>{person.last_name}</h2>
+            <h2>{person.number}</h2>
+            <h2>{person.telegram_id}</h2>
+            
             <br />
           </div>
         );
