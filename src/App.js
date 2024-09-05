@@ -12,7 +12,7 @@ const App = () => {
 
     try {
       const response = await fetch(
-        'https://tst.moidex.ru/mirror_api/users/list',
+        'https://reqres.in/api/users',
         {
           mode: 'no-cors',
           method: 'GET',
