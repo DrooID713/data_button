@@ -4,6 +4,7 @@ const App = () => {
   const [data, setData] = useState({data: []});
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState('');
+  const [person, setUsers] = useState([]);
 
   const handleClick = async () => {
     setIsLoading(true);
