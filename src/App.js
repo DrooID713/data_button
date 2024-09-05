@@ -11,9 +11,8 @@ const App = () => {
     try {
       const response = await fetch('https://tst.moidex.ru/mirror_api/users/list', {
         method: 'GET',
-        mode: 'no cors',
         headers: {
-          'Content-Type': 'application/json'
+          Accept: 'application/json',
         },
       });
 
