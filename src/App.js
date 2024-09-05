@@ -12,7 +12,7 @@ const App = () => {
 
     try {
       const response = await fetch(
-        'https://cors-anywhere.herokuapp.com/https://tst.moidex.ru/mirror_api/users/list',
+        'https://cors-anywhere.herokuapp.com/<https://tst.moidex.ru/mirror_api/users/list>',
         {
           mode: 'no-cors',
           method: 'GET',
