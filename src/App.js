@@ -47,7 +47,7 @@ const App = () => {
     <div>
       {err && <h2>{err}</h2>}
 
-      <button onClick={handleClick}>Fetch data</button>
+      <button onClick={handleClick}>Get JSON</button>
 
       {isLoading && <h2>Loading...</h2>}
 
