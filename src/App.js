@@ -1,3 +1,5 @@
+import './App.css';
+
 import {useState} from 'react';
 
 const App = () => {
@@ -9,12 +11,16 @@ const App = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://tst.moidex.ru/mirror_api/users/list', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
+      const response = await fetch(
+        'https://tst.moidex.ru/mirror_api/users/list',
+        {
+          mode: 'no-cors',
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
         },
-      });
+      );
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
@@ -22,7 +28,10 @@ const App = () => {
 
       const result = await response.json();
 
-      console.log('result is: ', JSON.stringify(result, null, 4));
+      console.log(
+        'result is: ',
+        JSON.stringify(result, null, 4),
+      );
 
       setData(result);
     } catch (err) {
@@ -52,6 +61,7 @@ const App = () => {
             <h2>{person.email}</h2>
             <h2>{person.number}</h2>
             <h2>{person.telegram_id}</h2>
+            
             <br />
           </div>
         );
