@@ -9,7 +9,7 @@ const App = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://tst.moidex.ru/mirror_api/users/list', {
+      const response = await fetch('https://cors-anywhere.herokuapp.com/<https://tst.moidex.ru/mirror_api/users/list>', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -38,7 +38,7 @@ const App = () => {
     <div>
       {err && <h2>{err}</h2>}
 
-      <button onClick={handleClick}>Fetch data</button>
+      <button onClick={handleClick}>Get JSON</button>
 
       {isLoading && <h2>Loading...</h2>}
 
