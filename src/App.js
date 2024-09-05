@@ -1,5 +1,3 @@
-import './App.css';
-
 import {useState} from 'react';
 
 const App = () => {
@@ -11,16 +9,12 @@ const App = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch(
-        'https://cors-anywhere.herokuapp.com/<https://tst.moidex.ru/mirror_api/users/list>',
-        {
-          mode: 'no-cors',
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          },
+      const response = await fetch('https://reqres.in/api/users', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
         },
-      );
+      });
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
@@ -28,10 +22,7 @@ const App = () => {
 
       const result = await response.json();
 
-      console.log(
-        'result is: ',
-        JSON.stringify(result, null, 4),
-      );
+      console.log('result is: ', JSON.stringify(result, null, 4));
 
       setData(result);
     } catch (err) {
@@ -47,21 +38,16 @@ const App = () => {
     <div>
       {err && <h2>{err}</h2>}
 
-      <button onClick={handleClick}>Get JSON</button>
+      <button onClick={handleClick}>Fetch data</button>
 
       {isLoading && <h2>Loading...</h2>}
 
       {data.data.map(person => {
         return (
-          <div key={person._id}>
-            <h2>{person.name}</h2>
-            <h2>{person.role}</h2>
-            <h2>{person.login}</h2>
-            
+          <div key={person.id}>
             <h2>{person.email}</h2>
-            <h2>{person.number}</h2>
-            <h2>{person.telegram_id}</h2>
-            
+            <h2>{person.first_name}</h2>
+            <h2>{person.last_name}</h2>
             <br />
           </div>
         );
