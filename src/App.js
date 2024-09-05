@@ -9,10 +9,11 @@ const App = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://cors-anywhere.herokuapp.com/<https://tst.moidex.ru/mirror_api/users/list>', {
+      const response = await fetch('https://tst.moidex.ru/mirror_api/users/list', {
         method: 'GET',
+        mode: 'no cors',
         headers: {
-          Accept: 'application/json',
+          'Content-Type': 'application/json'
         },
       });
 
