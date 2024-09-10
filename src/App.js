@@ -32,7 +32,7 @@ const App = () => {
     }
   };
 
-  
+  console.log(data);
 
   return (
     <div>
