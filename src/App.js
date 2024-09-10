@@ -32,8 +32,6 @@ const App = () => {
     }
   };
 
-  console.log(data);
-
   return (
     <div>
       {err && <h2>{err}</h2>}
@@ -42,7 +40,7 @@ const App = () => {
 
       {isLoading && <h2>Loading...</h2>}
 
-      {result.map(person => {
+      {data.data.map(person => {
         return (
           <div key={person._id}>
             <h2>{person.name}</h2>
