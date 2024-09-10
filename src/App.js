@@ -32,15 +32,17 @@ const App = () => {
     }
   };
 
+  
+
   return (
     <div>
       {err && <h2>{err}</h2>}
 
-      <button onClick={handleClick}>Fetch data</button>
+      <button onClick={handleClick}>Get Data</button>
 
       {isLoading && <h2>Loading...</h2>}
 
-      {data.data.map(person => {
+      {result.data.map(person => {
         return (
           <div key={person._id}>
             <h2>{person.name}</h2>
