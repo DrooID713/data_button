@@ -42,7 +42,7 @@ const App = () => {
 
       {isLoading && <h2>Loading...</h2>}
 
-      {JSON.map(person => {
+      {result.map(person => {
         return (
           <div key={person._id}>
             <h2>{person.name}</h2>
